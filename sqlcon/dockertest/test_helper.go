@@ -468,7 +468,6 @@ func DumpSchema(ctx context.Context, t *testing.T, db string) string {
 	cli, err := client.NewClientWithOpts(client.FromEnv)
 	require.NoError(t, err)
 	containers, err := cli.ContainerList(ctx, types.ContainerListOptions{
-		Quiet:   true,
 		Filters: filters.NewArgs(filters.Arg("expose", containerPort)),
 	})
 	require.NoError(t, err)

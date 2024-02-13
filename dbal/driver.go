@@ -4,6 +4,7 @@
 package dbal
 
 import (
+	"fmt"
 	"strings"
 	"sync"
 
@@ -53,6 +54,7 @@ func GetDriverFor(dsn string) (Driver, error) {
 
 // IsSQLite returns true if the connection is a SQLite string.
 func IsSQLite(dsn string) bool {
+	fmt.Printf("===>%s", dsn)
 	scheme := strings.Split(dsn, "://")[0]
 	return scheme == "sqlite" || scheme == "sqlite3"
 }

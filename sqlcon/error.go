@@ -89,9 +89,5 @@ func HandleError(err error) error {
 		}
 	}
 
-	if err := handleSqlite(err); err != nil {
-		return err
-	}
-
 	return errors.WithStack(err)
 }
